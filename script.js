@@ -8,6 +8,15 @@ form.addEventListener("submit", (event)=> {
 
     const locationInput = event.target[0].value
 
+    if(locationInput){
+        if(document.querySelector("#no-search")){
+            document.querySelector("#no-search").remove()
+        }
+        const unOrdered = document.querySelector(".weather-history ul")
+        const search = document.createElement("li")
+        search.innerText = locationInput
+        unOrdered.prepend(search) 
+    }
 
 
     // const locationInput = document.querySelector("#location-input")
