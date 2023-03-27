@@ -1,4 +1,4 @@
-let {
+{
     "current_condition": [
         {
             "FeelsLikeC": "8",
