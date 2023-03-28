@@ -42,8 +42,8 @@ const searchWeather = (locationInput) => {
             weatherIcon.src="./assets/icons8-light-snow.gif"
             weatherIcon.alt="snow"
         } else {
-            weatherIcon.src="./assets/icons8-wind.gif"
-            weatherIcon.alt="wind"
+            weatherIcon.src="http://cdn.onlinewebfonts.com/svg/img_136745.png"
+            weatherIcon.alt="partly sunny"
         }
         article.innerHTML = `
                 ${weatherIcon.outerHTML}           
@@ -136,23 +136,19 @@ form.addEventListener("submit", (event)=> {
     const fahrenheit = document.querySelector("#to-f")
     const celsius = document.querySelector("#to-c")
     const convertedTemp = document.querySelector("#converted-temperature")
-    let value = 0
+    let calculate = 0
 
-    converter.addEventListener("submit", (event)=> {
+converter.addEventListener("submit", (event)=> {
     event.preventDefault()
-    //  const convertInput = document.querySelector("temp-to-convert")
-        const convertInput = event.target[0].value
-        console.log(event)
+    const convertInput = event.target[0].value
     
-   if(celsius.checked){
-      value = (convertInput * 9/5) + 32
-      convertedTemp.innerText = value.toFixed(2)
-    console.log(value)
-}
-    else { 
-        value = (convertInput - 32) * 5/9
-        convertedTemp.innerText = value.toFixed(2)
-        console.log(value)
-}
+    if(celsius.checked){
+      calculate = (convertInput * 9/5) + 32
+      convertedTemp.innerText = calculate.toFixed(2)
+    }
+    else if (fahrenheit.checked) { 
+        calculate = (convertInput - 32) * 5/9
+        convertedTemp.innerText = calculate.toFixed(2)
+    }
 
- })
+})
