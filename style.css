@@ -23,7 +23,13 @@ header {
 
   /* Main content */
 
-#current-weather, .upcoming{
+#current-weather {
+    background-color: rgb(34, 37, 38);
+    border: solid 2px black;
+    border-radius: 20px;
+    color: rgb(178, 228, 246);
+}
+.upcoming{
     background-color: rgb(178, 228, 246);
     border: solid 2px black;
     border-radius: 20px;
@@ -41,6 +47,7 @@ header {
 #converted-temperature {
     margin: 0 0 0 50px;
 }
+
 .upcoming-container {
     margin: 20px 0 0 0;
     display: grid;
@@ -48,18 +55,17 @@ header {
 }
 
 article {
-    text-align: center;
     align-items: center;
+    background-color: lightgray;
+    text-align: center;
     padding: 20px;
     border: solid 1px;
-    background-color: lightgray;
 }
 
 body {
 background-image: url("https://thumbs.gfycat.com/ApprehensiveBlackandwhiteEarwig-size_restricted.gif");
 background-repeat: no-repeat;
 background-size: cover;
-
 }
 
 img {
@@ -69,27 +75,26 @@ img {
 main {
     margin: 20px 0 0 0 ;
 }
- 
- */
     
     /* Sidebar */
 aside section{
         padding: 20px;
 } 
 
-aside #temperature-converter {
+#temperature-converter {
     background-color: rgb(17, 21, 83);
     border: solid 2px black;
     border-radius: 20px;
     color: white;
+    font-weight: bold;
+    margin: 5px 5px 20px;
     padding: 5px 5px 5px 5px;
-    position: absolute;
-    left: 2%;
-    top: 20%;
-    width: 15%;
+    position: relative;
+    bottom: 150%;
+    width: 80%;
 }
 #temp-to-convert {
-    width: 20%;
+    width: 50%;
 }
 .weather-history {
     background-color: rgb(17, 21, 83);
@@ -98,7 +103,7 @@ aside #temperature-converter {
     color: white;
     padding: 5px 5px 5px 5px;
     position: absolute;
-    top: 20%;
+    top: 16%;
     right: 2%;
     width: 15%;
 }
@@ -108,28 +113,40 @@ aside #temperature-converter {
 @media only screen and (max-width: 1200px){
     /*Tablets [601px -> 1200px]*/
 }
-
-@media only screen and (min-width: 0px) and (max-width: 571px){
+@media only screen and (min-width: 572px) and (max-width: 630px){
+    .weather-history {
+        width: fit-content;
+    }
+}
+@media only screen and (min-width: 0px) and (max-width: 630px){
     /*Small smartphones [325px -> 425px]*/
+    body {
+        background-size: contain;
+        background-repeat: repeat;
+    }
     .upcoming-container{
         display: grid;
         grid-template-columns: 1fr;
-        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
     }
     aside #temperature-converter {
-        position: absolute;
-        left: 40%;
-        top: 59%;
-        width: 30%;
+        display: grid;
+        position: relative;
+        left: 300%;
+        top: 500%;
+        width: 100%;
     }
     .weather-history { 
-        display: grid;
         align-items: center;
+        display: grid;
         position: relative;
-        right: 100%;
-        top: 63%;
+        right: 200%;
+        top: 75%;
         width: 100%;
-       
     }
+#convert-submit,
+#temp-to-convert,
+#converted-temperature {
+    margin: 0 0 0 20px;
+}
 
 }

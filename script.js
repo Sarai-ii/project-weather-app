@@ -33,17 +33,19 @@ const searchWeather = (locationInput) => {
         let weatherIcon = document.querySelector("img")
             
         if(sun > 50){
-            weatherIcon.src="./assets/icons8-summer.gif"
+            // weatherIcon.src="./assets/icons8-summer.gif" // passes the test
+            weatherIcon.src="https://thumbs.gfycat.com/InfamousZealousIrishterrier-max-1mb.gif"
             weatherIcon.alt="sun"
         } else if (rain > 50){
             // weatherIcon.src="./assets/icons8-torrential-rain.gif" //passes the test but is boring
             weatherIcon.src="https://i.pinimg.com/originals/9d/9a/23/9d9a23a4d99de3a7fae1a34e5972a4b7.gif"
             weatherIcon.alt="rain"
         } else if (snow > 50) {
-            weatherIcon.src="./assets/icons8-light-snow.gif"
+            // weatherIcon.src="./assets/icons8-light-snow.gif"
+            weatherIcon.src="https://cutewallpaper.org/21/falling-snow-gif-transparent-background/Pin-on-digital-images.gif"
             weatherIcon.alt="snow"
         } else {
-            weatherIcon.src="http://cdn.onlinewebfonts.com/svg/img_136745.png"
+            // weatherIcon.src="https://thumbs.gfycat.com/RapidDimEider-max-1mb.gif"
             weatherIcon.alt="partly sunny"
         }
         article.innerHTML = `
