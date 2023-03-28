@@ -36,7 +36,8 @@ const searchWeather = (locationInput) => {
             weatherIcon.src="./assets/icons8-summer.gif"
             weatherIcon.alt="sun"
         } else if (rain > 50){
-            weatherIcon.src="./assets/icons8-torrential-rain.gif"
+            // weatherIcon.src="./assets/icons8-torrential-rain.gif" //passes the test but is boring
+            weatherIcon.src="https://i.pinimg.com/originals/9d/9a/23/9d9a23a4d99de3a7fae1a34e5972a4b7.gif"
             weatherIcon.alt="rain"
         } else if (snow > 50) {
             weatherIcon.src="./assets/icons8-light-snow.gif"
@@ -64,6 +65,7 @@ const searchWeather = (locationInput) => {
         } else {
             temp.innerHTML = `<strong>Nearest Area:</strong> <em>${area}</em>`
         }
+        
 
 // Removing Previous Search Text & Adding Input Into That Section As a List
         if(locationInput){
@@ -81,8 +83,15 @@ const searchWeather = (locationInput) => {
            link.setAttribute("href", "#")
            link.innerText = `${locationInput}`
            search.innerText = ` (${currently}°F)`
-           unOrdered.prepend(search) 
-           search.prepend(link)
+
+        //Removes duplicate searches
+           const existingLink = Array.from(unOrdered.querySelectorAll('a')).find((a) =>
+           a.innerText === link.innerText)
+           
+           if(!existingLink){
+               unOrdered.prepend(search) 
+               search.prepend(link)
+           }
        }
 
 // Adding 3-Day Forecast into Aside>Article Section
@@ -144,11 +153,11 @@ converter.addEventListener("submit", (event)=> {
     
     if(celsius.checked){
       calculate = (convertInput * 9/5) + 32
-      convertedTemp.innerText = calculate.toFixed(2)
+      convertedTemp.innerText = `${calculate.toFixed(2)}°F`
     }
     else if (fahrenheit.checked) { 
         calculate = (convertInput - 32) * 5/9
-        convertedTemp.innerText = calculate.toFixed(2)
+        convertedTemp.innerText = `${calculate.toFixed(2)}°C`
     }
 
 })
