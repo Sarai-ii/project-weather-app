@@ -45,7 +45,6 @@ const searchWeather = (locationInput) => {
             weatherIcon.src="./assets/icons8-wind.gif"
             weatherIcon.alt="wind"
         }
-
         article.innerHTML = `
                 ${weatherIcon.outerHTML}           
             <h2 id="area">${locationInput}</h2>
@@ -57,6 +56,15 @@ const searchWeather = (locationInput) => {
             <p id="rain"><strong>Chance of Rain:</strong> ${rain}%</p>
             <p id="snow"><strong>Chance of Snow:</strong> ${snow}%</p>
         `
+        //Imperfect Matching
+        const area = near.areaName[0].value
+        const temp = document.querySelector("#nearest")
+        if (locationInput.toLowerCase() == area.toLowerCase()) {
+            temp.innerHTML = `<strong>Area:</strong> <em>${area}</em>`
+        } else {
+            temp.innerHTML = `<strong>Nearest Area:</strong> <em>${area}</em>`
+        }
+
 // Removing Previous Search Text & Adding Input Into That Section As a List
         if(locationInput){
             if(document.querySelector("#no-search")){
@@ -65,15 +73,14 @@ const searchWeather = (locationInput) => {
            const unOrdered = document.querySelector(".weather-history ul")
            const search = document.createElement("li")
            const link = document.createElement("a")
-         
-
-           link.addEventListener("click", (event) =>{
+          
+        link.addEventListener("click", (event) => {
             searchWeather(locationInput, false)
-           })
+        })
 
            link.setAttribute("href", "#")
            link.innerText = `${locationInput}`
-           search.innerText = ` - ${currently}°F`
+           search.innerText = ` (${currently}°F)`
            unOrdered.prepend(search) 
            search.prepend(link)
        }
@@ -149,7 +156,3 @@ form.addEventListener("submit", (event)=> {
 }
 
  })
-
-
-
-

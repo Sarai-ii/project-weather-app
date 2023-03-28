@@ -28,10 +28,11 @@ header {
     background-color: lightgray;
 }
 #main-container {
+    align-items: center;
     display: grid;
     grid-template-columns: .5fr 1fr .5fr; 
-    align-items: center;
     justify-content: space-evenly;
+    width: 100%;
 } 
 
 .upcoming-container {
@@ -74,4 +75,14 @@ aside #temperature-converter {
 }
   
   /* Images */
-  
+  /* Media Queries */
+  @media screen and (max-width: 676px) {
+    .main-container{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        width: 20%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+    .weather-history {
+        grid-template-rows: .5fr;
+    }
+  }
