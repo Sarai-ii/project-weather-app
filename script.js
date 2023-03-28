@@ -137,14 +137,14 @@ form.addEventListener("submit", (event)=> {
         const convertInput = event.target[0].value
         console.log(event)
     
-   if(celsius.checked ){
+   if(celsius.checked){
       value = (convertInput * 9/5) + 32
-      convertedTemp.textContent = value.toFixed(2)
+      convertedTemp.innerText = value.toFixed(2)
     console.log(value)
 }
-    else if (fahrenheit.checked) { 
+    else { 
         value = (convertInput - 32) * 5/9
-        convertedTemp.textContent = value.toFixed(2)
+        convertedTemp.innerText = value.toFixed(2)
         console.log(value)
 }
 

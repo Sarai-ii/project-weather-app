@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://icons.iconarchive.com/icons/iynque/ios7-style/72/Weather-icon.png">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script defer src="script.js"></script>
     <title>Weather App</title>
@@ -25,19 +26,21 @@
               <br>
               <input type="number" id="temp-to-convert" name="temp-to-convert" required>
               <br>
-              <label for="to-c">Celcius</label>
+              <label for="to-c">C to F</label>
               <input type="radio" id="to-c" name="convert-temp" value="c" checked>
               <!-- <br> -->
-              <label for="to-f">Farenheit</label>
+              <label for="to-f">Fahrenheit</label>
               <input type="radio" id="to-f" name="convert-temp" value="f">
               <br>
               <input type="submit" value="Convert">
               
-              <h4 id="converted-temperature">0.00</h4>
+              <h4 id="converted-temperature">0.00 FIX THE TO BE FIXED on Non-pase Integers</h4>
             </form>
         </aside>
         <main>
-            <article id="current-weather">
+            <article 
+            id="current-weather">
+                <img id="weather-icon" src="" alt="">
                 <p id="location-name">Choose a location to view the weather</p>
             </article>
             <aside class="upcoming-container">
