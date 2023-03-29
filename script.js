@@ -45,7 +45,7 @@ const searchWeather = (locationInput) => {
             weatherIcon.src="https://cutewallpaper.org/21/falling-snow-gif-transparent-background/Pin-on-digital-images.gif"
             weatherIcon.alt="snow"
         } else {
-            // weatherIcon.src="https://thumbs.gfycat.com/RapidDimEider-max-1mb.gif"
+            weatherIcon.src="https://thumbs.gfycat.com/RapidDimEider-max-1mb.gif"
             weatherIcon.alt="partly sunny"
         }
         article.innerHTML = `
